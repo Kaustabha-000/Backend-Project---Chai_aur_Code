@@ -16,4 +16,10 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" })); // to accept enc
 app.use(express.static("public")); // to store files for easy access
 app.use(cookieParser()); // to perform CRUD on cookies
 
+// Routes import
+import userRouter from "./routes/user.routes.js";
+
+// Routes declaration
+app.use("/api/v1/users", userRouter);
+
 export { app };
